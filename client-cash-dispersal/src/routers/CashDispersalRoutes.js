@@ -25,6 +25,11 @@ export const CashDispersalRoutes = () => {
         
         <Route
           exact
+          path="/"
+          element={<CashDepositPage toggle={sidebarToggle} text_properties={text_properties} />}
+        />
+        <Route
+          exact
           path="/deposit/*"
           element={<CashDepositPage toggle={sidebarToggle} text_properties={text_properties} />}
         />

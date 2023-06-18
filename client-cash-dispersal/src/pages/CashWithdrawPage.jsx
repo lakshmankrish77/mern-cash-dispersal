@@ -251,7 +251,7 @@ export const CashWithdrawPage = (props) => {
               value={two_dollars}
             />
           </React.Fragment>
-        </Box>
+        
         <React.Fragment>
           <TextField
             disabled
@@ -267,6 +267,11 @@ export const CashWithdrawPage = (props) => {
             value={five_dollars}
           />
         </React.Fragment>
+        </Box>
+        <Box
+          component="div"
+          sx={{ visibility: "visible", bgcolor: "background.paper" }}
+        >
         <React.Fragment>
           <TextField
             disabled
@@ -297,6 +302,11 @@ export const CashWithdrawPage = (props) => {
             value={twenty_dollars}
           />
         </React.Fragment>
+        </Box>
+        <Box
+          component="div"
+          sx={{ visibility: "visible", bgcolor: "background.paper" }}
+        >
         <React.Fragment>
           <TextField
             disabled
@@ -328,6 +338,7 @@ export const CashWithdrawPage = (props) => {
             value={hundred_dollars}
           />
         </React.Fragment>
+        </Box>
       </Box>
     </React.Fragment>
   );

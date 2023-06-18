@@ -22,13 +22,18 @@ const theme = createTheme({
   },
 });
 
-export const CashDepositPage = (props) => {
+export const CashDepositPage = (props) => { 
   // const API_URL = "http://localhost:5002/api/atm";
-  const API_URL01 = `'http://localhost:'+ ${process.env.BACKEND_SERVER_PORT} +'/api/atm'`;
+  // const API_URL01 = `'http://localhost:'+ ${process.env.BACKEND_SERVER_PORT} +'/api/atm'`;
 
   // console.log(API_URL01);
   // alert(API_URL01);
-  alert("backend_port:"+ process.eng.BACKEND_SERVER_PORT);
+
+  
+  console.log("backend_port#:", process.env.REACT_APP_BACKEND_SERVER_PORT);
+  console.log("REACT_APP_PORT#:", process.env.REACT_APP_PORT);
+  // alert("port#(Dockerfile):"+ process.env.REACT_APP_PORT);
+  
   const API_URL = "http://localhost:5002/api/atm";
   const [userDepositAmount, setUserDepositAmount] = useState(0);
   const [userDepositDenomination, setUserDepositDenomination] = useState(100);
@@ -147,7 +152,7 @@ export const CashDepositPage = (props) => {
         <React.Fragment>
           <React.Fragment>
             <FormControl sx={{ m: 1, minWidth: 80 }}>
-              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <InputLabel id="demo-simple-select-label">Notes</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -240,7 +245,7 @@ export const CashDepositPage = (props) => {
               value={two_dollars}
             />
           </React.Fragment>
-        </Box>
+        
         <React.Fragment>
           <TextField
             disabled
@@ -256,6 +261,11 @@ export const CashDepositPage = (props) => {
             value={five_dollars}
           />
         </React.Fragment>
+        </Box>
+        <Box
+          component="div"
+          sx={{ visibility: "visible", bgcolor: "background.paper" }}
+        >
         <React.Fragment>
           <TextField
             disabled
@@ -271,6 +281,7 @@ export const CashDepositPage = (props) => {
             value={ten_dollars}
           />
         </React.Fragment>
+       
         <React.Fragment>
           <TextField
             disabled
@@ -286,6 +297,11 @@ export const CashDepositPage = (props) => {
             value={twenty_dollars}
           />
         </React.Fragment>
+        </Box>
+        <Box
+          component="div"
+          sx={{ visibility: "visible", bgcolor: "background.paper" }}
+        >
         <React.Fragment>
           <TextField
             disabled
@@ -301,6 +317,7 @@ export const CashDepositPage = (props) => {
             value={fifty_dollars}
           />
         </React.Fragment>
+       
         <React.Fragment>
           <TextField
             disabled
@@ -317,6 +334,7 @@ export const CashDepositPage = (props) => {
             value={hundred_dollars}
           />
         </React.Fragment>
+        </Box>
       </Box>
     </React.Fragment>
   );
