@@ -1,0 +1,83 @@
+{
+    "info": {
+        "name": "cash-dispersal-test",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "http://localhost:5001/api/atm/deposit",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:5001/api/atm/deposit/",
+                    "path": [
+                        "api",
+                        "atm",
+                        "deposit"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5001"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "\n  { \"denomination\": 100, \"denom_count\": 2 }\n"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:5001/api/atm/withdraw",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:5001/api/atm/withdraw",
+                    "path": [
+                        "api",
+                        "atm",
+                        "withdraw"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5001"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"userEnteredAmount\":110\n}"
+                }
+            }
+        },
+        {
+            "name": "http://localhost:5001/api/atm/",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:5001/api/atm/",
+                    "path": [
+                        "api",
+                        "atm"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5001"
+                }
+            }
+        }
+    ]
+}
