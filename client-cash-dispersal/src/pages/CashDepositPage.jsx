@@ -24,17 +24,16 @@ const theme = createTheme({
 
 export const CashDepositPage = (props) => { 
   // const API_URL = "http://localhost:5002/api/atm";
-  // const API_URL01 = `'http://localhost:'+ ${process.env.BACKEND_SERVER_PORT} +'/api/atm'`;
-
-  // console.log(API_URL01);
-  // alert(API_URL01);
-
   
-  console.log("backend_port#:", process.env.REACT_APP_BACKEND_SERVER_PORT);
-  console.log("REACT_APP_PORT#:", process.env.REACT_APP_PORT);
-  // alert("port#(Dockerfile):"+ process.env.REACT_APP_PORT);
+  var host_url = "http://localhost:";
+  var suffix_url= "/api/atm";
+  const server_port =  process.env.REACT_APP_BACKEND_SERVER_PORT;
+  const API_URL = host_url + server_port + suffix_url;
+
+  // const API_URL = `'http://localhost:'+ ${process.env.REACT_APP_BACKEND_SERVER_PORT} +'/api/atm'`;
+  console.log(API_URL);
   
-  const API_URL = "http://localhost:5002/api/atm";
+
   const [userDepositAmount, setUserDepositAmount] = useState(0);
   const [userDepositDenomination, setUserDepositDenomination] = useState(100);
 
@@ -48,7 +47,9 @@ export const CashDepositPage = (props) => {
   const [hundred_dollars, setHundred_dollars] = useState(0);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     getCurrentBalance();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
  
@@ -152,7 +153,7 @@ export const CashDepositPage = (props) => {
         <React.Fragment>
           <React.Fragment>
             <FormControl sx={{ m: 1, minWidth: 80 }}>
-              <InputLabel id="demo-simple-select-label">Notes</InputLabel>
+              <InputLabel id="demo-simple-select-label"></InputLabel>
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -166,8 +167,7 @@ export const CashDepositPage = (props) => {
                 <MenuItem value={10}>Ten</MenuItem>
                 <MenuItem value={5}>Five</MenuItem>
                 <MenuItem value={2}>Two</MenuItem>
-
-                <MenuItem value={30}>Thirty</MenuItem>
+                
               </Select>
             </FormControl>
             <TextField

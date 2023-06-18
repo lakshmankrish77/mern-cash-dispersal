@@ -20,7 +20,7 @@ services:
     build: 
         context: ./client-cash-dispersal
         args:
-            REACT_APP_BACKEND_SERVER_PORT_IP: 5005
+            REACT_APP_BACKEND_SERVER_PORT_IP: 5002
     container_name: client-cash-dispersal180602
     ports:
       - 3000:3000

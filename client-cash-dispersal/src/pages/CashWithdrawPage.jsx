@@ -26,7 +26,15 @@ const theme = createTheme({
 });
 
 export const CashWithdrawPage = (props) => {
-  const API_URL = "http://localhost:5002/api/atm";
+  // const API_URL = "http://localhost:5002/api/atm";
+  var host_url = "http://localhost:";
+  var suffix_url= "/api/atm";
+  const server_port =  process.env.REACT_APP_BACKEND_SERVER_PORT;
+  const API_URL = host_url + server_port + suffix_url;
+
+  // const API_URL = `'http://localhost:'+ ${process.env.REACT_APP_BACKEND_SERVER_PORT} +'/api/atm'`;
+  console.log(API_URL);
+
   const [userEnteredAmount, setUserEnteredAmount] = useState(0);
   const [snackbar_status, setSnackbar_status] = useState(false);
 
@@ -38,7 +46,10 @@ export const CashWithdrawPage = (props) => {
   const [hundred_dollars, setHundred_dollars] = useState(0);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     getCurrentBalance();
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClose = (reason) => {
